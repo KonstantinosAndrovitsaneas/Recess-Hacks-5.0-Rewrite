@@ -21,7 +21,9 @@ void manage_investments(Portfolio& portfolio, BankAccount& account) {
         std::cin.ignore(); 
         std::getline(std::cin, name);
         portfolio.buyInvestment(Investment::getInvestmentByName(name), account);
-        std::cout << "\n";
+        std::cout << "You may only buy one investment per day\n";
+        next_day(portfolio);
+
         break;
     case 2:
         std::cout << "Enter the index of the investment (starting from 1): \n";
