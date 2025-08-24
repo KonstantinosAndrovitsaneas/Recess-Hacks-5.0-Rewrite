@@ -89,8 +89,9 @@ void menu_function(BankAccount& account, Portfolio& portfolio) {
 }
 
 int week_day = 1;
-
+int total_day = 0;
 void next_day(Portfolio& portfolio, BankAccount& account) {
+    total_day++;
     for (auto* inv : portfolio.investments) {
         inv->update_value();
     }
@@ -107,14 +108,22 @@ void next_day(Portfolio& portfolio, BankAccount& account) {
 
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_real_distribution<> dist(1, 10);
+    std::uniform_int_distribution<> dist(1, 10);
 
-    if (dist(gen) == 4 or dist(gen) == 9) {
-    
-    
+
+    if (dist(gen) == 2) {
+                
+        if (!Events::simple_events.empty()) {
+            std::uniform_int_distribution<> eventDist(0, Events::simple_events.size() - 1);
+            int idx = eventDist(gen);
+            Events::simple_events[idx]->simple_event(account, portfolio);
+        }
+
+
+
     }
-
-
+      
+    std::cout << total_day << "\n";
 
 }
 
