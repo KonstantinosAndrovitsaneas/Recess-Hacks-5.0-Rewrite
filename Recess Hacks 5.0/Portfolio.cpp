@@ -22,7 +22,11 @@ void Portfolio::sellInvestment(int index, BankAccount& account) {
 		Investment* inv = investments[index];
 		account.deposit(inv->get_value());
 		
+
+		Investment::all_investments.push_back(inv);
 		investments.erase(investments.begin() + index);
+		
+	
 	} else {
 		std::cout << "This investment does not exist!" << std::endl;
 	}

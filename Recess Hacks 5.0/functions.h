@@ -9,3 +9,6 @@
 
 void manage_investments(Portfolio& portfolio, BankAccount& account);
 void menu_function(BankAccount& account, Portfolio& portfolio);	
+
+
+void next_day(Portfolio& portfolio);
