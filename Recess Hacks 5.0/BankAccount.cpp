@@ -29,4 +29,4 @@ bool BankAccount::withdraw(double amount) {
 
 double BankAccount::get_balance()  {
 	return balance;
-}	
+}

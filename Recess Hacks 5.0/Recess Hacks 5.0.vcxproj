@@ -138,6 +138,7 @@
     <ClInclude Include="Investment.h" />
     <ClInclude Include="Portfolio.h" />
     <ClInclude Include="Shell.h" />
+    <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
