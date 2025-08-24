@@ -13,8 +13,15 @@ int main()
 
 	BankAccount account(1000.0f);
 
-	Investment nike(500.0f, 5.0f);
+	Investment nike(700, 5.0f);
 
-	//Portfolio my_portfolio;
+	Portfolio my_portfolio;
 
+	my_portfolio.buyInvestment(nike, account);
+
+	my_portfolio.listInvestments();	
+	
+	my_portfolio.sellInvestment(0, account);
+
+	my_portfolio.listInvestments();
 }

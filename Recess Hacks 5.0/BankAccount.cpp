@@ -13,14 +13,17 @@ void BankAccount::deposit(double amount) {
 	}
 }
 
-void BankAccount::withdraw(double amount) {
+bool BankAccount::withdraw(double amount) {
 	if (amount > 0 && amount <= balance) {
 		balance -= amount;
+		return true;
 		std::cout << "Withdrew: $" << amount << std::endl;
 	} else if (amount > balance) {
 		std::cout << "Insufficient funds!" << std::endl;
+		return false;
 	} else {
 		std::cout << "Withdrawal amount must be positive!" << std::endl;
+		return false;
 	}
 }
 

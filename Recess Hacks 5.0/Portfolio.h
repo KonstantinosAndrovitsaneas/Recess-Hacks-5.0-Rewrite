@@ -8,6 +8,6 @@ public:
 
 	void buyInvestment(Investment& inv, BankAccount& account);
 	void sellInvestment(int index, BankAccount& account);
-		
+	void listInvestments();
 
 };
