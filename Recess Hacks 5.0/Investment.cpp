@@ -39,3 +39,10 @@ Investment* Investment::getInvestmentByName(const std::string& name) {
     return nullptr;
 
 }
+
+void Investment::list_available() {
+    std::cout << "Available Investments:\n";
+    for (const auto* inv : all_investments) {
+        std::cout << "Name: " << inv->name << ", Current Value: " << inv->capital << ", Growth Rate: " << inv->growth_rate << "%\n";
+    }
+}
