@@ -17,5 +17,5 @@ class Investment {
 	double update_value();
 	double get_value() const;
 	static Investment* getInvestmentByName(const std::string& name);
-
+	static void list_available();
 };

@@ -18,6 +18,8 @@ int main()
 	BankAccount account(1000.0); // Starting with $1000	
 	Portfolio portfolio;	
 
+	Investment inv1(500.0, 5.0, "Tech Startup");
+
 	while (game_running) {
 	
 		menu_function(account, portfolio);
