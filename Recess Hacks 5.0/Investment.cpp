@@ -1,7 +1,16 @@
 #include "Investment.h"
 #include <iostream>
 #include <random>
-Investment::Investment(double initial_capital, double rate) : capital(initial_capital), growth_rate(rate) {}	
+#include <vector>
+
+std::vector<Investment*> Investment::all_investments;
+
+
+Investment::Investment(double initial_capital, double rate, std::string new_name) : capital(initial_capital), growth_rate(rate), name(new_name) {
+
+    allInvestments.push_back(this);
+
+}	
 
 
 double Investment::update_value() {
@@ -20,3 +29,11 @@ double Investment::update_value() {
 double Investment::get_value() const {
     return capital;
 }   
+
+Investment* Investment::getInvestmentByName(std::string& name) {
+    for (Investment* inv : allInvestments) {
+        if (inv->get_name() == name) return inv;
+    }
+    return nullptr;
+
+}
