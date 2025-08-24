@@ -9,8 +9,4 @@ public:
 	void deposit(double amount);
 	bool withdraw(double amount);
 	double get_balance();
-
-
-
-
 };
