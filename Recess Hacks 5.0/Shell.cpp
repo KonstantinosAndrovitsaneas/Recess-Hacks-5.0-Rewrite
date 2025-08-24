@@ -11,9 +11,9 @@ std::string PrintPrompt() {
 	return buffer;
 }
 
-std::vector<std::string> ParceCommand(std::string buffer) {
-	
-}
+//std::vector<std::string> ParceCommand(std::string buffer) {
+//	
+//}
 
 void ExecCommand(std::vector<std::string> parsed_command) {
 	//switch (parsed_command[0].c_str) {
@@ -28,7 +28,7 @@ void ExecCommand(std::vector<std::string> parsed_command) {
 
 void RunShellRound() {
 	std::string command = PrintPrompt();
-	ExecCommand(ParceCommand(command));
+	//ExecCommand(ParceCommand(command));
 }
 
 bool Prompt(std::string comment) {

@@ -71,7 +71,7 @@ void Worker::CheckWorkspace(int percentage_chance) {
 void Worker::Update() {
 	CreateProfit((productive + anxious + current_mood) / 3);
 	AskForRaise(greedy);
-	CheckWorkspace();
+	//CheckWorkspace();
 
 	if (current_mood == 0) {
 		//this.Leave()
@@ -81,7 +81,7 @@ void Worker::Update() {
 void HireWorker() {
 	Worker worker();
 
-	workers.push_back(worker);
+	//workers.push_back(worker);
 	
 }
 
