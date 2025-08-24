@@ -1,6 +1,7 @@
 #include "functions.h"
 #include "Worker.h"
 #include <iostream>
+#include <random>
 
 void menu_function(BankAccount& account, Portfolio& portfolio); // forward declaration
 
@@ -25,7 +26,7 @@ void manage_investments(Portfolio& portfolio, BankAccount& account) {
         if (inv != nullptr) {
             portfolio.buyInvestment(inv, account);
             std::cout << "You may only buy one investment per day\n";
-            next_day(portfolio);
+            next_day(portfolio,account);
         }
         else {
             std::cout << "Invalid name for investment\n";
@@ -82,14 +83,14 @@ void menu_function(BankAccount& account, Portfolio& portfolio) {
         
         break;
     case 4:
-        next_day(portfolio);
+        next_day(portfolio,account);
         break;
     }
 }
 
 int week_day = 1;
 
-void next_day(Portfolio& portfolio) {
+void next_day(Portfolio& portfolio, BankAccount& account) {
     for (auto* inv : portfolio.investments) {
         inv->update_value();
     }
@@ -103,4 +104,18 @@ void next_day(Portfolio& portfolio) {
     for (int i = 0; i < workers.size(); i++) {
         workers[i].Update();
     }
+
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dist(1, 10);
+
+    if (dist(gen) == 4 or dist(gen) == 9) {
+    
+    
+    }
+
+
+
 }
+
+

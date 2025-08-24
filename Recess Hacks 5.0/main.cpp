@@ -5,7 +5,7 @@
 #include "Investment.h"
 #include "Portfolio.h"
 #include "functions.h"
-
+#include "Events.h"
 
 
 
