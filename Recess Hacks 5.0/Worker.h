@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 class Worker {
 public:
@@ -27,3 +28,5 @@ void HireWorker();
 void FireWorker(int id);
 
 void CalculateWorkerSaleries();
+
+extern std::vector<Worker> workers;

@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "Worker.h"
 #include <iostream>
 
 void menu_function(BankAccount& account, Portfolio& portfolio); // forward declaration
@@ -68,8 +69,20 @@ void menu_function(BankAccount& account, Portfolio& portfolio) {
     }
 }
 
+int week_day = 1;
+
 void next_day(Portfolio& portfolio) {
-        for (auto* inv : portfolio.investments) {
-            inv->update_value();
-        }
+    for (auto* inv : portfolio.investments) {
+        inv->update_value();
     }
+
+    week_day++;
+    if (week_day == 30) {
+        CalculateWorkerSaleries();
+        week_day = 0;
+    }
+
+    for (int i = 0; i < workers.size(); i++) {
+        workers[i].Update();
+    }
+}
