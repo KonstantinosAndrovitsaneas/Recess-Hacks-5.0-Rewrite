@@ -1,14 +1,14 @@
 #pragma once
 class BankAccount {
 public:
-	float balance;
+	double balance;
 
-	BankAccount(float new_balance);
+	BankAccount(double new_balance);
 
 
-	void deposit(float amount);
-	void withdraw(float amount);
-	float get_balance() const;
+	void deposit(double amount);
+	void withdraw(double amount);
+	double get_balance();
 
 
 

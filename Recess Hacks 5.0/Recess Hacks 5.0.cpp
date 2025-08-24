@@ -3,25 +3,18 @@
 
 #include <iostream>
 #include "BankAccount.h"
+#include "Investment.h"
+#include "Portfolio.h"
 int main()
 {
 	bool game_running = true;
 
 	std::cout << "Placeholder message" << std::endl;
 
-	while(game_running) {
-		
-		
+	BankAccount account(1000.0f);
 
+	Investment nike(500.0f, 5.0f);
 
-
-
-
-
-
-
-	}
-
+	//Portfolio my_portfolio;
 
 }
-

@@ -1,10 +1,10 @@
 #include "BankAccount.h"
 #include <iostream>
 
-BankAccount::BankAccount(float new_balance) : balance(new_balance) {}
+BankAccount::BankAccount(double new_balance) : balance(new_balance) {}
 
 
-void BankAccount::deposit(float amount) {
+void BankAccount::deposit(double amount) {
 	if (amount > 0) {
 		balance += amount;
 		std::cout << "Deposited: $" << amount << std::endl;
@@ -13,7 +13,7 @@ void BankAccount::deposit(float amount) {
 	}
 }
 
-void BankAccount::withdraw(float amount) {
+void BankAccount::withdraw(double amount) {
 	if (amount > 0 && amount <= balance) {
 		balance -= amount;
 		std::cout << "Withdrew: $" << amount << std::endl;
@@ -24,6 +24,6 @@ void BankAccount::withdraw(float amount) {
 	}
 }
 
-void BankAccount::print_balance() const {
-	std::cout << "Current balance: $" << balance << std::endl;
+double BankAccount::get_balance()  {
+	return balance;
 }	

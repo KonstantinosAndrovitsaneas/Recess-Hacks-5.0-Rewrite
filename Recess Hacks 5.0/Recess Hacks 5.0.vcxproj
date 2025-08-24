@@ -123,7 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BankAccount.cpp" />
+    <ClCompile Include="Investment.cpp" />
+    <ClCompile Include="Portfolio.cpp" />
     <ClCompile Include="Recess Hacks 5.0.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BankAccount.h" />
+    <ClInclude Include="Investment.h" />
+    <ClInclude Include="Portfolio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
