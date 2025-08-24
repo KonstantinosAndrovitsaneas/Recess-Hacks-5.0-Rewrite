@@ -4,9 +4,9 @@
 #include "Investment.h"
 class Portfolio {
 public:
-	std::vector<Investment> investments;
+	std::vector<Investment*> investments;
 
-	void buyInvestment(Investment& inv, BankAccount& account);
+	void buyInvestment(Investment* inv, BankAccount& account);
 	void sellInvestment(int index, BankAccount& account);
 	void listInvestments();
 

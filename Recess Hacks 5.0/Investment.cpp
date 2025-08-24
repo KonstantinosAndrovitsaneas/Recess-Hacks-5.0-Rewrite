@@ -8,7 +8,7 @@ std::vector<Investment*> Investment::all_investments;
 
 Investment::Investment(double initial_capital, double rate, std::string new_name) : capital(initial_capital), growth_rate(rate), name(new_name) {
 
-    allInvestments.push_back(this);
+    all_investments.push_back(this);
 
 }	
 
@@ -30,10 +30,12 @@ double Investment::get_value() const {
     return capital;
 }   
 
-Investment* Investment::getInvestmentByName(std::string& name) {
-    for (Investment* inv : allInvestments) {
-        if (inv->get_name() == name) return inv;
+Investment* Investment::getInvestmentByName(const std::string& name) {
+    for (auto* inv : all_investments) {
+    if(inv-> name == name) {
+		return inv;
     }
+	}
     return nullptr;
 
 }

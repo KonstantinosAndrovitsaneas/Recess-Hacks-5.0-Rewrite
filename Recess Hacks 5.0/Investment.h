@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <iostream>
+#include <string>
 class Investment {
 
 
@@ -14,6 +16,6 @@ class Investment {
 
 	double update_value();
 	double get_value() const;
-	Investment* getInvestmentByName(std::string& name);
+	static Investment* getInvestmentByName(const std::string& name);
 
 };
