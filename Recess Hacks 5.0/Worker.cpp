@@ -2,10 +2,13 @@
 #include "Shell.h"
 #include "BankAccount.h"
 #include "Worker.h"
+//#include "Portfolio.h"
+#include <iostream>
 
 std::vector<Worker> workers;
 
-BankAccount profit_account(0);
+Portfolio portfolio;
+BankAccount profit_account(1000);
 
 Worker::Worker(int id) {
 	salery = rand() % 100;
@@ -81,5 +84,28 @@ void FireWorker(int id) {
 void CalculateWorkerSaleries() {
 	for (Worker worker : workers) {
 		profit_account.withdraw(worker.salery);
+	}
+}
+
+int FindWorker(int id) {
+	for (int i = 0; i < workers.size(); i++)
+		if (workers[i].id == id)
+			return id;
+	return NULL;
+}
+
+void PrintWorkerData(int id) {
+	int loc = FindWorker(id);
+	if (loc == NULL)
+		return;
+
+	std::cout << "WORKER #" << id << "\n";
+	std::cout << "	Salery: " << workers[loc].salery << " Mood: " << workers[loc].current_mood << std::endl;
+}
+
+void PrintWorkerDataList() {
+	for (Worker worker : workers) {
+		std::cout << "WORKER #" << std::to_string(worker.id) << "\n";
+		std::cout << "	Salery: " << std::to_string(worker.salery) << " Mood: " << std::to_string(worker.current_mood) << std::endl;
 	}
 }

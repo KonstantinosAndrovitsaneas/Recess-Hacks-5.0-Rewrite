@@ -79,7 +79,7 @@ void next_day(Portfolio& portfolio) {
     }
 
     week_day++;
-    if (week_day == 30) {
+    if (week_day == 7) {
         CalculateWorkerSaleries();
         week_day = 0;
     }

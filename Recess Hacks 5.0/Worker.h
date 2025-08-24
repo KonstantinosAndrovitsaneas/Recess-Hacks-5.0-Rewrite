@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "Portfolio.h"
 
 class Worker {
 public:
@@ -29,4 +30,10 @@ void FireWorker(int id);
 
 void CalculateWorkerSaleries();
 
+void PrintWorkerDataList();
+
 extern std::vector<Worker> workers;
+
+extern BankAccount profit_account;
+
+extern Portfolio portfolio;

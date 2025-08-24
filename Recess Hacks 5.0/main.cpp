@@ -5,7 +5,8 @@
 #include "Investment.h"
 #include "Portfolio.h"
 #include "functions.h"
-
+#include "Shell.h"
+#include "Worker.h"
 
 
 
@@ -15,14 +16,22 @@ int main()
 {
 	bool game_running = true;
 
-	BankAccount account(1000.0); // Starting with $1000	
-	Portfolio portfolio;	
+
+	// REPLACE WITH PROFIT ACCOUNT
+	//BankAccount account(1000.0); // Starting with $1000	
+		
 
 	Investment inv1(500.0, 5.0, "Tech Startup");
 
+	HireWorker();
+	HireWorker();
+	HireWorker();
+
 	while (game_running) {
 	
-		menu_function(account, portfolio);
+		menu_function(profit_account, portfolio);
+
+		//RunShellRound();
 	
 	}
 }
