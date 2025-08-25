@@ -12,5 +12,9 @@ void Events::simple_event(BankAccount& account, Portfolio& portfolio) {
     if (amount > account.balance) {
         amount = account.balance;
     }
-    account.withdraw(amount);
+    if(amount < 0) {
+        account.deposit(-amount);
+    } else {
+        account.withdraw(amount,true);
+	}
 }

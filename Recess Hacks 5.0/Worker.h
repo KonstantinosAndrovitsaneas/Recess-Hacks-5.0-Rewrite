@@ -4,36 +4,31 @@
 
 class Worker {
 public:
-	int current_mood;
-	int salery;
+    Worker(int id);
 
-	int productive;
-	int anxious;
-	int greedy;
+    static void printWorkers();
+    void CreateProfit(int percentage_chance, BankAccount& account);
+    void PromptRaise(int id, int amount, BankAccount& account);
+    void AskForRaise(BankAccount& account);
+    void CheckWorkspace(int percentage_chance);
+    void Update(BankAccount& account);
 
-	int id;
+    void PromptMoreSpace(int percentage_chance, BankAccount& account);
 
-	Worker(int id);
-
-	void Update();
-
-private:
-	void CreateProfit(int percentage_chance);
-	void AskForRaise(int percentage_chance);
-	void CheckWorkspace(int percentage_chance);
-	void PromptRaise(int id, int amount);
+    int id;
+    int salery;
+    int productive;
+    int greedy;
+    int anxious;
+    int current_mood;
 };
 
 void HireWorker();
-
 void FireWorker(int id);
-
-void CalculateWorkerSaleries();
-
+int FindWorker(int id);
+double CalculateWorkerSaleries(BankAccount& account);
+void PrintWorkerData(int id);
 void PrintWorkerDataList();
 
 extern std::vector<Worker> workers;
 
-extern BankAccount profit_account;
-
-extern Portfolio portfolio;

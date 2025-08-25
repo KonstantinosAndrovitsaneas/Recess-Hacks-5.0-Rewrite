@@ -14,7 +14,7 @@ Investment::Investment(double initial_capital, double rate, std::string new_name
 
 
 double Investment::update_value() {
-    double max = capital * (growth_rate / 100);
+    double max = capital * (growth_rate / 100.00);
     double min = -max;
 
     static std::random_device rd;

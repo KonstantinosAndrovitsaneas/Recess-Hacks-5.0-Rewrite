@@ -7,6 +7,7 @@
 #include "Investment.h"
 #include "Portfolio.h"
 #include "Events.h"
+#include "Worker.h"
 
 void manage_investments(Portfolio& portfolio, BankAccount& account);
 void menu_function(BankAccount& account, Portfolio& portfolio);	

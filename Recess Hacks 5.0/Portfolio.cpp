@@ -3,7 +3,7 @@
 #include <vector>
 #include "BankAccount.h"
 void Portfolio::buyInvestment(Investment* inv, BankAccount& account) {
-	bool bought = account.withdraw(inv->get_value());
+	bool bought = account.withdraw(inv->get_value(),false);
 	if(bought == true){
 	investments.push_back(inv);
 	}

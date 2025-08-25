@@ -130,7 +130,6 @@
     <ClCompile Include="Investment.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Portfolio.cpp" />
-    <ClCompile Include="Shell.cpp" />
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,7 +138,6 @@
     <ClInclude Include="functions.h" />
     <ClInclude Include="Investment.h" />
     <ClInclude Include="Portfolio.h" />
-    <ClInclude Include="Shell.h" />
     <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

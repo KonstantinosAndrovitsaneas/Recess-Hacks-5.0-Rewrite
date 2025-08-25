@@ -13,19 +13,30 @@ void BankAccount::deposit(double amount) {
 	}
 }
 
-bool BankAccount::withdraw(double amount) {
-	if (amount > 0 && amount <= balance) {
-		balance -= amount;
-		return true;
-		std::cout << "Withdrew: $" << amount << std::endl;
-	} else if (amount > balance) {
-		std::cout << "Insufficient funds!" << std::endl;
-		return false;
-	} else {
-		std::cout << "Withdrawal amount must be positive!" << std::endl;
-		return false;
-	}
+bool BankAccount::withdraw(double amount, bool isSalary) {
+    if (amount <= 0) {
+        std::cout << "Withdrawal amount must be positive!" << std::endl;
+        return false;
+    }
+
+    if (amount <= balance) {
+        balance -= amount;
+        std::cout << "Withdrew $" << amount << std::endl;
+        return true;
+    }
+
+    if (isSalary && amount > balance) {
+        std::cout << "Could not pay worker salaries! Game Over." << std::endl;
+        balance = 0;
+        exit(0); 
+    }
+    else {
+        std::cout << "Insufficient funds!" << std::endl;
+    }
+
+    return false;
 }
+
 
 double BankAccount::get_balance()  {
 	return balance;

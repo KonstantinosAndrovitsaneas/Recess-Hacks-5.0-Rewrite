@@ -62,7 +62,7 @@ void ExecCommand(std::vector<std::string> parsed_command) {
 	else if (command == "bank")
 		std::cout << profit_account.get_balance() << std::endl;
 	else if (command == "skip")
-		next_day(portfolio);
+		next_day(portfolio,profit_account);
 	else if (command == "help")
 		Help();
 	else if (command == "invest")

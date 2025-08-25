@@ -7,6 +7,6 @@ public:
 
 
 	void deposit(double amount);
-	bool withdraw(double amount);
+	bool withdraw(double amount, bool isSalary);
 	double get_balance();
 };
