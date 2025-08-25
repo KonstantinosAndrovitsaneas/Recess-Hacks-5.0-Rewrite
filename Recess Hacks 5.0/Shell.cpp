@@ -55,7 +55,7 @@ void ExecCommand(std::vector<std::string> parsed_command) {
 	std::string command = parsed_command[0].c_str();
 
 
-	if (command == "exit")
+	/*if (command == "exit")
 		exit(0);
 	else if (command == "manage")
 		Manage(parsed_command);
@@ -68,7 +68,7 @@ void ExecCommand(std::vector<std::string> parsed_command) {
 	else if (command == "invest")
 		manage_investments(portfolio, profit_account);
 	else
-		std::cout << "COMMAND NOT FOUND" << std::endl;
+		std::cout << "COMMAND NOT FOUND" << std::endl;*/
 }
 
 void RunShellRound() {
